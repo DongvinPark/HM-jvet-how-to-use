@@ -49,12 +49,12 @@ find . -name "TAppDecoderAnalyser" -type f -exec ls -l {} \;
 ffmpeg -i target-video.mp4 -c:v copy -bsf:v hevc_mp4toannexb input.265
 ```
 <br><br/>
-5. TAppDecoderAnalyser 실행파일이 위치하는 디렉토리로 돌아와서 아래의 명령어를 실행하여 비디오 프레임 간의 참조 관계를 출력하게 만듭니다.
+6. TAppDecoderAnalyser 실행파일이 위치하는 디렉토리로 돌아와서 아래의 명령어를 실행하여 비디오 프레임 간의 참조 관계를 출력하게 만듭니다.
 ```shell
 ./TAppDecoderAnalyser -b /.../path_to_input_bitstream_file/.../input.265 -o output.yuv --OutputDecodedSEIMessagesFilename ref_info.txt
 ```
 <br><br/>
-6. 터미널에서 결과를 확인합니다.
+7. 터미널에서 결과를 확인합니다.
 ```text
 실제 실행 결과의 일부를 가져왔습니다.
 POC 0는 현재 gop 안에서 첫 번째 프레임이므로 Key 프레임입니다.
