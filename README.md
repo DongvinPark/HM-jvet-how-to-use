@@ -1,19 +1,33 @@
 # HEVC 비디오 프레임 간 참조 관계 분석 도구 사용법
+<br><br/>
 
 ## 테스트 개요
 - HM:jvet 은 hevc 코덱으로 인코딩된 비디오 파일을 분석할 때 사용할 수 있는 유용한 command line tool 입니다.
 - hevc 비디오 내의 P 프레임이 코덱에 의해서 디코드 될 때 다른 P 프레임들을 참조하고 있는지 확인할 때 사용할 수 있습니다.
+<br><br/>
 
 ## 빌드 및 실행 환경 : Apple M series chip MacOS
 - M1 chip MacOS Sequoia 15.2 Mac Studio에서 진행했습니다.
+<br><br/>
 
 ## 사전 준비 사항
 - h265 코덱으로 인코딩된 비디오 파일을 준비합니다.
 - Xcode의 최신 버전이 설치돼 있어야 합니다.
 - homebrew가 설치돼 있어야 합니다.
 - homebrew를 이용해서 git, gcc, g++, cmake, ffmpeg를 설치해야 합니다.
+<br><br/>
 
-## how to start
+## quick start
+- 본 프로젝트를 깃 클론한 다음, 본 프로젝트의 루트 디렉토리 내에 분석 대상 h265 비디오 파일을 복사해 넣습니다.
+- 아래의 명령어 두 개를 차례대로 실행합니다.
+```text
+ffmpeg -i 타깃비디오.mp4 -c:v copy -bsf:v hevc_mp4toannexb input.265
+
+./TAppDecoderAnalyser -b input.265 -o output.yuv --OutputDecodedSEIMessagesFilename ref_info.txt
+```
+<br><br/>
+
+## how to start - form building source file
 1. HM:jvet 깃랩 프로젝트를 깃 클론합니다.
 ```shell
 git clone https://vcgit.hhi.fraunhofer.de/jvet/HM
@@ -126,12 +140,3 @@ POC   59 TId: 0 ( P-SLICE, QP 38 ) [DT  0.040] [L0 58 57 56 55 ] [L1 ] [:,(unk)]
 ... 후략
 ```
 <br><br/>
-
-## quick start
-- 본 프로젝트를 깃 클론한 다음, 본 프로젝트의 루트 디렉토리 내에 분석 대상 비디오 파일을 복사해 넣습니다.
-- 아래의 명령어 두 개를 차례대로 실행합니다.
-```text
-ffmpeg -i target-video.mp4 -c:v copy -bsf:v hevc_mp4toannexb input.265
-
-./TAppDecoderAnalyser -b input.265 -o output.yuv --OutputDecodedSEIMessagesFilename ref_info.txt
-```
