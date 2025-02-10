@@ -4,7 +4,7 @@
 - HM:jvet 은 hevc 코덱으로 인코딩된 비디오 파일을 분석할 때 사용할 수 있는 유용한 command line tool 입니다.
 - hevc 비디오 내의 P 프레임이 코덱에 의해서 디코드 될 때 다른 P 프레임들을 참조하고 있는지 확인할 때 사용할 수 있습니다.
 
-## 테스트 환경
+## 빌드 및 실행 환경 : Apple M series chip MacOS
 - M1 chip MacOS Sequoia 15.2 Mac Studio에서 진행했습니다.
 
 ## 사전 준비 사항
