@@ -27,7 +27,7 @@ ffmpeg -i 타깃비디오.mp4 -c:v copy -bsf:v hevc_mp4toannexb input.265
 ```
 <br><br/>
 
-## how to start - form building source file
+## how to start - from cloning source file to running excutable binary
 1. HM:jvet 깃랩 프로젝트를 깃 클론합니다.
 ```shell
 git clone https://vcgit.hhi.fraunhofer.de/jvet/HM
