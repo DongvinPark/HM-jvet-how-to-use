@@ -72,7 +72,7 @@ ffmpeg -i target-video.mp4 -c:v copy -bsf:v hevc_mp4toannexb input.265
 ```text
 실제 실행 결과의 일부를 가져왔습니다.
 POC 0는 현재 gop 안에서 첫 번째 프레임이므로 Key 프레임입니다.
-POC 5 번은 gop 인에서 다섯 번째 프레임이므로 P 프레임이고, 디코드 되는 과정에서 Key 프레임과 P 프레임 4개(POC 1~4)를 참조했음을 알 수 있습니다.
+POC 5 번은 gop 안에서 여섯 번째 프레임이므로 P 프레임이고, 디코드 되는 과정에서 Key 프레임과 P 프레임 4개(POC 1~4)를 참조했음을 알 수 있습니다.
 
 ... 초략
 
