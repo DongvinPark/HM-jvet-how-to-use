@@ -48,7 +48,7 @@ cmake .. -G "Xcode" -DCMAKE_CXX_FLAGS="-Wno-unused-command-line-argument"
 cmake --build . --config Release
 ```
 <br><br/>
-4. HM 프로젝트의 루트 디록토리로 이동한 후, 아래의 명령어를 실행하여 필요한 바이너리 파일의 실제 디렉토리 경로를 찾아냅니다.
+4. HM 프로젝트의 루트 디렉토리로 이동한 후, 아래의 명령어를 실행하여 필요한 바이너리 파일의 실제 디렉토리 경로를 찾아냅니다.
 ```shell
 find . -name "TAppDecoderAnalyser" -type f -exec ls -l {} \;
 
